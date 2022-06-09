@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#########################3
+# equities_watch specifics
+#########################3
+secrets.py
+prices.txt
+tda_token.json
