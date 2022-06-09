@@ -37,7 +37,7 @@ try:
 
     resp = c.get_quotes(tickers).json()
 
-    cryp = requests.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets=BTC').json()
+    cryp = requests.get('https://production.api.coindesk.com/v2/tb/price/ticker?assets='+",".join(cryptos)).json()
 
     for crypto in cryptos:
         info[crypto]['current_price'] = cryp['data'][crypto]['ohlc']['c']
