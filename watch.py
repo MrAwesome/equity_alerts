@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
+import requests
+import sys
 from pprint import pprint
 from tda import auth, client
-
-import requests
 
 from secrets import TDA_CLIENT_ID, TEXTBELT_API_KEY, PHONE_NUM
 
@@ -74,3 +74,4 @@ except Exception as e:
         'message': 'Error in price script!',
         'key': TEXTBELT_API_KEY,
         })
+    sys.exit(1)
