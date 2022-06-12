@@ -30,7 +30,7 @@ try:
 
     info = {l: {"target_price": float(r)} for [l, r] in [x.split(" ") for x in tickerlines]}
 
-    cryptonames = ['BTC']
+    cryptonames = ['BTC', 'ETH']
 
     tickers = [x for x in info if x not in cryptonames]
     cryptos = [x for x in info if x in cryptonames]
