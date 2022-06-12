@@ -64,7 +64,10 @@ try:
             'key': TEXTBELT_API_KEY,
             })
 
-    newcontents = "\n".join([t + " " + str(info[t]['target_price']) for t in not_under])
+    for t in under:
+        info[t]['target_price'] = info[t]['current_price'] * 0.95
+
+    newcontents = "\n".join([str(t) + " " + str(info[t]['target_price']) for t in info])
     tickerwrite = open("prices.txt", "w")
     tickerwrite.write(newcontents)
     tickerwrite.close()
@@ -74,4 +77,4 @@ except Exception as e:
         'message': 'Error in price script!',
         'key': TEXTBELT_API_KEY,
         })
-    sys.exit(1)
+    raise e
